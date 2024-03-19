@@ -25,8 +25,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://colabcademy.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
-# theme: minima
-remote_theme: pages-themes/architect@v0.2.0
+theme: minima
+# remote_theme: pages-themes/architect@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
