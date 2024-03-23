@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Could we reinvent the charm of old cities"
+title:  "Start here if you're new to Colabs"
 author: jane
 categories: [ Jekyll, tutorial ]
 image: assets/images/home.jpg

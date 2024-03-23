@@ -1,5 +1,5 @@
 # Site
-name: 'Colabcademy'
+title: 'Colabcademy'
 description: 'Tutorials for Google Colab, Jupyter notebooks, Python, Pandas, PyTorch, TensorFlow, PAX, Sci-kit Learn, sklearn, Hugging Face, huggingface.co'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
@@ -19,13 +19,13 @@ plugins:
   - jekyll-seo-tag
 
 authors:
-    sal:
+    eddy:
       name:           Eddy
       site:           https://www.linkedin.com/in/eddy-jin
       avatar:         /assets/images/avatar1.jpg
       bio:            "Hi, I am Eddy, the creator of Colabcademy. I hope you like it!"
       email:          eddy-jin@gmail.com
-      twitter:        https://twitter.com/eddyisfunn
+      twitter:        https://x.com/eddyisfunn
 
     jane:
       name:           Jane
@@ -43,8 +43,8 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      author: sal
-      avatar: /assets/images/avatar1.jpg
+      author: eddy
+      avatar: /assets/images/eddy.jpeg
 
   # all pages
   - scope:
