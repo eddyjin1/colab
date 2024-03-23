@@ -3,7 +3,6 @@ title: 'Colabcademy'
 description: 'Tutorials for Google Colab, Jupyter notebooks, Python, Pandas, PyTorch, TensorFlow, PAX, Sci-kit Learn, sklearn, Hugging Face, huggingface.co'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
-baseurl: '/'
 disqus: 'demowebsite'
 email: 'colabcademy@gmail.com'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
@@ -20,9 +19,9 @@ plugins:
 
 authors:
     eddy:
-      name:           Eddy
+      name:           Eddy Jin
       site:           https://www.linkedin.com/in/eddy-jin
-      avatar:         /assets/images/avatar1.jpg
+      avatar:         assets/images/eddy.jpeg
       bio:            "Hi, I am Eddy, the creator of Colabcademy. I hope you like it!"
       email:          eddy-jin@gmail.com
       twitter:        https://x.com/eddyisfunn
@@ -30,7 +29,7 @@ authors:
     jane:
       name:           Jane
       site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar2.jpg
+      avatar:         assets/images/avatar2.jpg
       bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
       email:          fakemail@gmail.com
       twitter:        https://twitter.com/wowthemesnet
