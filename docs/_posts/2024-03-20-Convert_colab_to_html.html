@@ -1,0 +1,183 @@
+---
+layout: colab
+title:  Convert colab to HTML
+date:   2024-03-20
+categories: colab drive
+---
+
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://colabcademy.com"><img src="https://raw.githubusercontent.com/eddyjin1/colab/gh-pages/colab_logo.png" width=200></a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Convert colab to HTML</strong></p>
+<p>This colab takes a colab and converts it to an HTML page.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#@title Paths</span>
+<span class="n">colab_path</span> <span class="o">=</span> <span class="s1">'/content/drive/My Drive/Colab Notebooks/Convert colab to html'</span> <span class="c1">#@param{type:'string'}</span>
+<span class="n">output_folder_path</span> <span class="o">=</span> <span class="s1">'/content/drive/My Drive/colabcademy/htmls/'</span> <span class="c1">#@param{type:'string'}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#@title Convert full colab to full HTML</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">"/content/drive"</span><span class="p">):</span>
+  <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">'/content/drive'</span><span class="p">)</span>
+
+<span class="c1"># Read notebook from drive</span>
+<span class="kn">import</span> <span class="nn">nbformat</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">colab_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Convert notebook to html</span>
+<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
+<span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
+<span class="n">html_exporter</span><span class="o">.</span><span class="n">template_name</span> <span class="o">=</span> <span class="s1">'classic'</span>
+<span class="n">html_output</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
+
+<span class="c1"># Create HTML filename</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">colab_path</span><span class="p">)</span>
+<span class="n">title</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">html_filename</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'.html'</span>
+<span class="n">html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder_path</span><span class="p">,</span> <span class="n">html_filename</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+  <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_output</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#@title Convert only colab body to HTML</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">"/content/drive"</span><span class="p">):</span>
+  <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">'/content/drive'</span><span class="p">)</span>
+
+<span class="c1"># Read notebook from drive</span>
+<span class="kn">import</span> <span class="nn">nbformat</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">colab_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Convert notebook to html</span>
+<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
+<span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
+<span class="n">html_exporter</span><span class="o">.</span><span class="n">template_name</span> <span class="o">=</span> <span class="s1">'classic'</span>
+<span class="n">html_output</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
+
+<span class="c1"># Extract body only</span>
+<span class="n">body_start</span> <span class="o">=</span> <span class="s1">'&lt;body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"&gt;'</span>
+<span class="n">body_end</span> <span class="o">=</span> <span class="s1">'&lt;/body&gt;'</span>
+<span class="n">start_index</span> <span class="o">=</span> <span class="n">html_output</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">body_start</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">body_start</span><span class="p">)</span>
+<span class="n">end_index</span> <span class="o">=</span> <span class="n">html_output</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">body_end</span><span class="p">)</span>
+<span class="n">body_content</span> <span class="o">=</span> <span class="n">html_output</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">end_index</span><span class="p">]</span>
+
+<span class="c1"># Create HTML filename</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">colab_path</span><span class="p">)</span>
+<span class="n">title</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">html_filename</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'.html'</span>
+<span class="n">html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder_path</span><span class="p">,</span> <span class="n">html_filename</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+  <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body_content</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-70867a9af2d5&gt;</span> in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#@title Convert only colab body to HTML</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">from</span> google<span class="ansi-blue-fg">.</span>colab <span class="ansi-green-fg">import</span> drive
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>exists<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;/content/drive&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>   drive<span class="ansi-blue-fg">.</span>mount<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;/content/drive&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;os&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For more tutorials and colabs, visit <a href="https://www.colabcademy.com">https://www.colabcademy.com</a></p>
+<p>© 2024 Eddy Jin</p>
+
+</div>
+</div>
+</div>
+</div>
