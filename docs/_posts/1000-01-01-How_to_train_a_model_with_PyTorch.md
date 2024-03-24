@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: How to train a model with PyTorch
