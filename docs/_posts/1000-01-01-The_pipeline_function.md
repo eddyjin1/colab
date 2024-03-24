@@ -1,9 +1,9 @@
 ---
 layout: post
 title: The pipeline function
-date: 6/11/2021
+date: 2021-06-11
 author: huggingface
-thumbnail: https://i.ytimg.com/vi/tiZFewofSLM/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBAParu16oT9yRsOSzmsLH_SUKJ7w
+image: https://i.ytimg.com/vi/tiZFewofSLM/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBAParu16oT9yRsOSzmsLH_SUKJ7w
 youtubeid: tiZFewofSLM
 ---
 Hugging Face Course Chapter 1
