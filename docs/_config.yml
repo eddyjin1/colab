@@ -20,19 +20,33 @@ plugins:
 authors:
     eddy:
       name:           Eddy Jin
-      site:           https://www.linkedin.com/in/eddy-jin
       avatar:         assets/images/eddy.jpeg
       bio:            "Hi, I am Eddy, the creator of Colabcademy. I hope you like it!"
-      email:          eddy-jin@gmail.com
-      twitter:        https://x.com/eddyisfunn
+      twitter:        eddyjin_
+      linkedin:       eddy-jin
 
-    jane:
-      name:           Jane
-      site:           https://www.wowthemes.net
-      avatar:         assets/images/avatar2.jpg
-      bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
-      email:          fakemail@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
+    tensorflow:
+      name:           TensorFlow
+      avatar:         https://yt3.googleusercontent.com/ytc/AIdro_lHK_bZjMJ3JaII-PKFPZ8XKaoedexEr8EdeApMQQ=s176-c-k-c0x00ffffff-no-rj
+      site:           https://www.tensorflow.org
+      youtube:        TensorFlow
+      github:         tensorflow
+
+    andrejkarpathy:
+      name:           Andrej Karpathy
+      avatar:         https://yt3.googleusercontent.com/ytc/AIdro_n8r_ah4fmhoKuTXWp1Pgtt_8i7tarvZlJ7NSfubjo=s176-c-k-c0x00ffffff-no-rj
+      site:           https://karpathy.ai
+      youtube:        AndrejKarpathy
+      twitter:        karpathy
+      github:         karpathy
+
+    huggingface:
+      name:           HuggingFace
+      avatar:         https://yt3.googleusercontent.com/ytc/AIdro_kjJCv7kKRsG_Xydp2FH767yOvpbMsqgNHiIjVR=s176-c-k-c0x00ffffff-no-rj
+      site:           https://huggingface.co
+      youtube:        HuggingFace
+      github:         huggingface
+      twitter:        huggingface
 
 # Defaults
 defaults:
