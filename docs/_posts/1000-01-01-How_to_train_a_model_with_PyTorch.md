@@ -1,9 +1,9 @@
 ---
 layout: post
 title: How to train a model with PyTorch
-date: 11/16/2021
+date: 2021-11-16
 author: huggingface
-thumbnail: https://i.ytimg.com/vi/KmvPlW2cbIo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAENsrA0XW1eSH65xSIVm0NHYmz5Q
+image: https://i.ytimg.com/vi/KmvPlW2cbIo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAENsrA0XW1eSH65xSIVm0NHYmz5Q
 youtubeid: KmvPlW2cbIo
 ---
 Mark dives into the classic PyTorch training loop.
